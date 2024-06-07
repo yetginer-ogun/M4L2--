@@ -1,17 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 body::-webkit-scrollbar {
     width: 12px;
-  }
-  
-  body::-webkit-scrollbar-track {
-    background: #0F172A;        /* izleyici bölgesinin rengi */
-  }
-  
-  body::-webkit-scrollbar-thumb {
-    background-color: rgba(30, 41, 59, 0.4);    /* kaydırma çubuğunun rengi */
-    border-radius: 20px;       /* kaydırma çubuğunun yuvarlaklığı */
+}
+
+body::-webkit-scrollbar-track {
+    background: #0F172A;
+    /* izleyici bölgesinin rengi */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(30, 41, 59, 0.4);
+    /* kaydırma çubuğunun rengi */
+    border-radius: 20px;
+    /* kaydırma çubuğunun yuvarlaklığı */
     border: none;
-  }
+}
 
 
 
@@ -26,7 +30,9 @@ body {
     color: #F8FAFC;
 }
 
-h1, h2, p {
+h1,
+h2,
+p {
     margin: 0;
 }
 
@@ -110,6 +116,7 @@ ul {
     padding: 0 20px;
     text-align: center;
 }
+
 .card__subtitle {
     padding: 0 20px;
     text-align: center;
@@ -207,7 +214,7 @@ ul {
 
 .form__button:hover {
     color: #F8FAFC;
-    background:  rgba(14, 165, 233, 1);
+    background: rgba(14, 165, 233, 1);
 }
 
 .main {
@@ -252,7 +259,7 @@ ul {
 
 .main__link:hover {
     color: #F8FAFC;
-    background:  rgba(14, 165, 233, 1);
+    background: rgba(14, 165, 233, 1);
 }
 
 
@@ -293,4 +300,113 @@ ul {
 
 .login__link:hover {
     color: rgba(14, 165, 233, 1);
+}
+
+
+.mic__button {
+    border: 1px solid rgba(14, 165, 233, 1);
+    background: #0F172A;
+    border-radius: 10px;
+    color: rgba(14, 165, 233, 1);
+    padding: 10px;
+    font: inherit;
+    width: 175px;
+    height: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+    text-align: center;
+
+}
+
+.mic__button:hover {
+    color: #F8FAFC;
+    background: rgba(14, 165, 233, 1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Genel checkbox container stili */
+.styled-checkbox {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    user-select: none;
+    color: rgba(14, 165, 233, 1);
+}
+
+/* Varsayılan checkbox gizle */
+.styled-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Özel checkbox */
+.checkbox-custom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #0F172A;
+    border: 1px solid rgba(14, 165, 233, 1);
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+/* Hover efekti */
+.styled-checkbox:hover input~.checkbox-custom {
+    background-color: rgba(14, 165, 233, 1);
+}
+
+/* Checkbox işaretli olduğunda */
+.styled-checkbox input:checked~.checkbox-custom {
+    background-color: rgba(14, 165, 233, 1);
+}
+
+/* Checkbox işareti */
+.checkbox-custom:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.styled-checkbox input:checked~.checkbox-custom:after {
+    display: block;
+}
+
+.styled-checkbox .checkbox-custom:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid #F8FAFC;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+/* Label hover efekti */
+.styled-checkbox:hover {
+    color: #F8FAFC;
+}
+
+.styled-checkbox:hover input~.checkbox-custom {
+    background-color: rgba(14, 165, 233, 1);
 }
