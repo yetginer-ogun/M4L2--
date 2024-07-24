@@ -1,5 +1,5 @@
 # İçe aktar
-from flask import Flask, render_template,request, redirect, session, flash
+from flask import Flask, render_template,request, redirect, session, flash, url_for
 # Veri tabanı kitaplığını bağlama
 from flask_sqlalchemy import SQLAlchemy
 from functools import wraps
@@ -128,12 +128,11 @@ def index():
 def card(id):
     print(session["voice"])
     card = Card.query.get(id)
-    if session["id"] == card.user_id:
+    if session["id"] == card.user_id or card.public == 1:
         return render_template('card.html', card=card)
     else:
-        cards = Card.query.filter_by(user_id=session["id"]).order_by(Card.id).all()
         flash("Bu kartı görüntüleyeme izniniz yok")
-        return render_template('index.html', cards=cards)
+        return render_template(url_for('index'))
 
 
 # Giriş oluşturma sayfasını çalıştırma
